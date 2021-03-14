@@ -53,7 +53,7 @@ window.onload = function () {
 		var conceptno=searchParam("conceptno");
 		var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+stepno+".md").split("\n");
 		var content = "";
-		for(i=1; i < content.length+1; i++){
+		for(i=1; i < temp.length+1; i++){
 			content+=temp[i];
 		}
 		document.getElementById('content').innerHTML =
