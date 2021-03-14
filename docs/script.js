@@ -31,6 +31,8 @@ window.onload = function () {
 		var i = 1;
 		var tutorial = {};
 		var tutorial_mark = 0;
+		var concept = {};
+		var concept_mark = 0;
 		while (1) {
 		  var temp=readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+i+".md");
 		  if(temp!=-1){
@@ -42,12 +44,27 @@ window.onload = function () {
 		  }
 		  i++;
 		}
+		while (1) {
+		  var temp=readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/concept"+i+".md");
+		  if(temp!=-1){
+			var no = temp.split('\n')[0].split(' | ')[0];
+			var name = temp.split('\n')[0].split(' | ')[1];
+			concept[no]=name;
+		  }else{
+			  break;
+		  }
+		  i++;
+		}
+		concept_mark="### 개념\n";
 		tutorial_mark="### 튜토리얼\n"
 		for (i = 1; i < Object.keys(tutorial).length+1; i++) {
 		  tutorial_mark+="[1. "+tutorial[i]+"](http://www.osdev.kro.kr/?stepno="+i+")\n";
 		}
+		for (i = 1; i < Object.keys(concept).length+1; i++) {
+		  concept_mark+="["+concept[i]+"](http://www.osdev.kro.kr/?conceptno="+i+")\n";
+		}
 		document.getElementById('content').innerHTML =
-			marked(tutorial_mark);
+			marked(tutorial_mark+"\n"+concept_mark);
 	}else{
 		var stepno=searchParam("stepno");
 		var conceptno=searchParam("conceptno");
