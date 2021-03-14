@@ -20,6 +20,7 @@ function readfile(file)
 window.onload = function () {
 	var i = 1;
 	var tutorial = {};
+	var tutorial_mark = 0;
 	while (1) {
 	  var temp=readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+i+".md");
 	  if(temp!=-1){
@@ -31,9 +32,10 @@ window.onload = function () {
 	  }
 	  i++;
 	}
+	tutorial_mark="### 튜토리얼\n"
 	for (i = 1; i < Object.keys(tutorial).length+1; i++) {
-	  console.log(tutorial[i]);
+	  tutorial_mark+="[1. "+tutorial[i]+"](http://google.com/)\n";
 	}
 	document.getElementById('tutorial').innerHTML =
-		marked("### 튜토리얼\n```\n\n```");
+		marked(tutorial_mark);
 }
