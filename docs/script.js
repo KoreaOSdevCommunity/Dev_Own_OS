@@ -51,7 +51,11 @@ window.onload = function () {
 	}else{
 		var stepno=searchParam("stepno");
 		var conceptno=searchParam("conceptno");
-		var content = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+stepno+".md")
+		var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+stepno+".md").split("\n");
+		var content = "";
+		for(i=1; i < content.length+1; i++){
+			content+=temp[i];
+		}
 		document.getElementById('content').innerHTML =
 			marked(content);
 	}
