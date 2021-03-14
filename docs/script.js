@@ -43,6 +43,7 @@ window.onload = function () {
 			  break;
 		  }
 		  i++;
+		}
 		while(1){
 		  var temp=readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/concept"+i+".md");
 		  if(temp!=-1){
@@ -54,11 +55,10 @@ window.onload = function () {
 		  }
 			i++;
 		}
-		}
 		concept_mark="### 개념\n";
 		tutorial_mark="### 튜토리얼\n"
 		for (i = 1; i < Object.keys(tutorial).length+1; i++) {
-		  tutorial_mark+="[i. "+tutorial[i]+"](http://www.osdev.kro.kr/?stepno="+i+")<br>";
+		  tutorial_mark+="["+i+". "+tutorial[i]+"](http://www.osdev.kro.kr/?stepno="+i+")<br>";
 		}
 		for (i = 1; i < Object.keys(concept).length+1; i++) {
 		  concept_mark+="["+concept[i]+"](http://www.osdev.kro.kr/?conceptno="+i+")<br>";
