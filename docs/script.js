@@ -69,7 +69,7 @@ window.onload = function () {
 		var stepno=searchParam("stepno");
 		var conceptno=searchParam("conceptno");
 		if(conceptno===-1){
-			var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+stepno+".md").split("\n");
+			var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+stepno+".md").replace("\n","<br>");
 			var content = "";
 			for(i=1; i < temp.length; i++){
 				content+=temp[i];
