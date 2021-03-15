@@ -80,7 +80,7 @@ window.onload = function () {
 			var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/concept"+conceptno+".md").split("\n");
 			var content = "";
 			for(i=1; i < temp.length; i++){
-				content+=temp[i]+\n";
+				content+=temp[i]+"\n";
 			}
 			document.getElementById('content').innerHTML =
 				marked(content);
