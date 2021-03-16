@@ -69,7 +69,7 @@ window.onload = function () {
 		var stepno=searchParam("stepno");
 		var conceptno=searchParam("conceptno");
 		var search_keyword=searchParam("search");
-		if(conceptno===-1){
+		if(conceptno===-1 && search_keyword===-1){
 			var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+stepno+".md").split("\n");
 			var content = "";
 			for(i=1; i < temp.length; i++){
@@ -77,7 +77,7 @@ window.onload = function () {
 			}
 			document.getElementById('content').innerHTML =
 				marked(content);
-		}else if(search===-1){
+		}else if(stepno===-1 && search_keyword===-1){
 			var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/concept"+conceptno+".md").split("\n");
 			var content = "";
 			for(i=1; i < temp.length; i++){
