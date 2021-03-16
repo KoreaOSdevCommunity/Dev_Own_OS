@@ -27,7 +27,7 @@ function searchParam(key) {
 };
 
 window.onload = function () {
-	if(searchParam("stepno")===-1 && searchParam("conceptno")===-1){
+	if(searchParam("stepno")===-1 && searchParam("conceptno")===-1 && searchParam("search")===-1){
 		var i = 1;
 		var tutorial = {};
 		var tutorial_mark = 0;
@@ -68,6 +68,7 @@ window.onload = function () {
 	}else{
 		var stepno=searchParam("stepno");
 		var conceptno=searchParam("conceptno");
+		var search_keyword=searchParam("search");
 		if(conceptno===-1){
 			var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+stepno+".md").split("\n");
 			var content = "";
@@ -76,7 +77,7 @@ window.onload = function () {
 			}
 			document.getElementById('content').innerHTML =
 				marked(content);
-		}else{
+		}else if(search===-1){
 			var temp = readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/concept"+conceptno+".md").split("\n");
 			var content = "";
 			for(i=1; i < temp.length; i++){
@@ -84,6 +85,9 @@ window.onload = function () {
 			}
 			document.getElementById('content').innerHTML =
 				marked(content);
+		}else{
+			document.getElementById('content').innerHTML =
+				'<h2 class="title text-center">검색기록</h2>';
 		}
 	}
 }
