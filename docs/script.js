@@ -86,8 +86,40 @@ window.onload = function () {
 			document.getElementById('content').innerHTML =
 				marked(content);
 		}else{
+			var i = 1;
+			var cont=[];
+			var post={};
+			var result='<h2 class="title text-center">"'+search_keyword+'" 검색기록</h2><br>';
+			
+			while (1) {
+			  var temp=readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/step"+i+".md");
+			  if(temp!=-1){
+				  cont.push(temp);
+			  }else{
+				  break;
+			  }
+			  i++;
+			}
+			while(1){
+			  var temp=readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/concept"+i+".md");
+			  if(temp!=-1){
+				  cont.push(temp);
+			  }else{
+				  break;
+			  }
+				i++;
+			}
+			for(i=0; i < cont.length; i++){
+				if(cont[i].indexOf(search_keyword)!=-1){
+					var temp=cont[i].split("\n")[0].split(" | ");
+					post[temp[1]]="http://www.osdev.kro.kr/?stepno="+temp[0];
+				}
+			}
+			for(i=0; i < Object.keys(post).length; i++){
+				result=result+'<h4 class="basic text-center"><a href="'+post[Object.keys(post)[i]]+'">'+Object.keys(post)[i]+'</a></h4><br>'
+			}
 			document.getElementById('content').innerHTML =
-				'<h2 class="title text-center">검색기록</h2>';
+				result;
 		}
 	}
 }
