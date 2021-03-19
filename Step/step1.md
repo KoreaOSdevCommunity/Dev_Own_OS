@@ -25,7 +25,6 @@ OS개발에 크로스 컴파일러가 필요하다고 했습니다. 왜 일까�
 ![그림1-1](https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/file/image/image1-1.png)
 
 영어로 되어 있는 것을 한글로 바꾼것을 봅시다.
-
 |구분|소스코드|Debian환경|젠투리눅스|Fedora리눅스|Cygwin(윈도우)|OpenBSD|아치 리눅스|
 |---|---|---|---|---|---|---|---|
 |설치방법|...|sudo apt install ~|sudo emerge --ask ~|sudo dnf install ~|설치 프로그램|doas pkg_add ~|pacman -Syu ~|
