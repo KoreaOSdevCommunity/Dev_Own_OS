@@ -124,4 +124,4 @@ make install-target-libgcc
 1. https://wiki.osdev.org/GCC_Cross-Compiler
 2. https://github.com/HIPERCUBE/64bit-Multicore-OS/blob/master/book/Windows.pdf
 
----
+--- 
