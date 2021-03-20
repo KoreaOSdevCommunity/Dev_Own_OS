@@ -101,10 +101,22 @@ make install-gcc
 make install-target-libgcc
 ```
 를 해주시면 GCC빌드또한 마무리 됩니다. 
+마지막으로 /usr/cross 를 환경변수로 등록하면 됩니다.
 
 ---
 
-마지막으로 /usr/cross 를 환경변수로 등록하면 됩니다.
+이제 조금 밖에 안남았습니다.
+바로 어셈블리어 nasm을 다운하는것 그리고 ide다운로드죠.
+먼저 nasm입니다.
+[nasm 다운로드 하러 가기](https://www.nasm.us/pub/nasm/releasebuilds/?C=M;O=D)
+에 가서 최신 버전으로 설치해줍시다.
+
+---
+
+이제 진짜 마지막입니다. 바로 통합개발환경 ide다운로드입니다.
+어떤걸 설치해도 상관 없지만 이 튜토리얼에서는 vsc를 설치해보도록 하겠습니다.
+[vsc 다운](https://code.visualstudio.com/)
+마찬가지로 여기서 다운로드 하면 되겠습니다.
 
 ---
 
