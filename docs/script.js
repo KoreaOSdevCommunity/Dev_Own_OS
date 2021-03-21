@@ -101,6 +101,7 @@ window.onload = function () {
 			  }
 			  i++;
 			}
+			i=1;
 			while(1){
 			  var temp=readfile("https://raw.githubusercontent.com/Developer-CoderK/Dev_Own_OS/main/Step/concept"+i+".md");
 			  if(temp!=-1){
